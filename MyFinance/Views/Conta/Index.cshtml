@@ -1,0 +1,74 @@
+﻿<!--
+    View Listar Contas
+-->
+
+@using PagedList.Core.Mvc
+
+
+
+
+
+<h2>Listar Contas</h2>
+<br />
+<div class="row">
+    <div class="col-lg-6">
+        <button class="btn btn-success" onclick="criarConta()"> <strong>+</strong> Adicionar Conta</button>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+            </span>
+        </div>
+    </div>
+</div>
+
+<br /><br />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+
+            <th style="width:20px"> <strong>#ID</strong></th>
+            <th>Nome</th>
+            <th>Saldo</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+
+    @{
+        foreach (var item in (List<ContaModel>)ViewBag.ListaConta)
+        {
+            <tbody>
+                <tr>
+                    <td> @item.Id.ToString()</td>
+                    <td>@item.Nome.ToString()</td>
+                    <td>R$ @item.Saldo.ToString()</td>
+                    <td>
+                        <button type="button" class="btn btn-warning">Ver</button>
+                        <button class="btn btn-primary">Editar</button>
+                        <button class="btn btn-danger" onclick="ExcluirConta(@item.Id.ToString())">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+
+        }
+    }
+</table>
+
+
+
+<script>
+    function criarConta() {
+        window.location.href = "../Conta/CriarConta";
+
+    }
+
+    function ExcluirConta(id_conta) {
+        window.location.href = "../Conta/ExcluirConta/" + id_conta;
+
+    }
+</script>
+

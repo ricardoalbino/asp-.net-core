@@ -1,0 +1,11 @@
+c:\users\cadu\documents\visual studio 2017\Projects\Financas\MyFinance\bin\Debug\netcoreapp2.0\MyFinance.deps.json
+c:\users\cadu\documents\visual studio 2017\Projects\Financas\MyFinance\bin\Debug\netcoreapp2.0\MyFinance.runtimeconfig.json
+c:\users\cadu\documents\visual studio 2017\Projects\Financas\MyFinance\bin\Debug\netcoreapp2.0\MyFinance.runtimeconfig.dev.json
+c:\users\cadu\documents\visual studio 2017\Projects\Financas\MyFinance\bin\Debug\netcoreapp2.0\MyFinance.dll
+c:\users\cadu\documents\visual studio 2017\Projects\Financas\MyFinance\bin\Debug\netcoreapp2.0\MyFinance.pdb
+c:\users\cadu\documents\visual studio 2017\Projects\Financas\MyFinance\obj\Debug\netcoreapp2.0\MyFinance.csprojAssemblyReference.cache
+c:\users\cadu\documents\visual studio 2017\Projects\Financas\MyFinance\obj\Debug\netcoreapp2.0\MyFinance.csproj.CoreCompileInputs.cache
+c:\users\cadu\documents\visual studio 2017\Projects\Financas\MyFinance\obj\Debug\netcoreapp2.0\MyFinance.AssemblyInfoInputs.cache
+c:\users\cadu\documents\visual studio 2017\Projects\Financas\MyFinance\obj\Debug\netcoreapp2.0\MyFinance.AssemblyInfo.cs
+c:\users\cadu\documents\visual studio 2017\Projects\Financas\MyFinance\obj\Debug\netcoreapp2.0\MyFinance.dll
+c:\users\cadu\documents\visual studio 2017\Projects\Financas\MyFinance\obj\Debug\netcoreapp2.0\MyFinance.pdb

@@ -1,0 +1,19 @@
+﻿#elemento-login {
+    margin-top: 8px !important;
+}
+
+
+.btn-cadu {
+    color: #cab7b7 !important;
+    background-color: #7b44eae6 !important;
+    border-color: #020202 !important;
+    border-radius: 30px !important;
+    width: 36px !important;
+    height: 36px !important;
+    padding: 0px !important;
+}
+
+#login-header {
+    border-radius: 50px !important;
+}
+

@@ -1,0 +1,79 @@
+﻿<!--
+    View Listar Plano de Contas
+-->
+
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Plano Contas</h2>
+
+<br />
+<div class="row">
+    <div class="col-lg-6">
+        <button class="btn btn-success" onclick="criarPlanoConta()"> <strong>+</strong> Adicionar Conta</button>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+            </span>
+        </div>
+    </div>
+</div>
+
+<br /><br />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+
+            <th style="width:20px"> <strong>#ID</strong></th>
+            <th>Descrição</th>
+            <th>Tipo</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+
+    @{
+        foreach (var item in (List<PlanoContasModel>)ViewBag.ListaPlanoContas)
+        {
+            <tbody>
+                <tr>
+                    <td> @item.Id.ToString()</td>
+                    <td>@item.Descricao.ToString()</td>
+                    <td>@item.Tipo.ToString().Replace("R", "Receita").Replace("D", "Despesa")</td>
+                    <td>
+                        <button type="button" class="btn btn-warning">Ver</button>
+                        <button class="btn btn-primary" onclick="editarPlanoConta(@item.Id.ToString())">Editar</button>
+                        <button class="btn btn-danger" onclick="ExcluirPlanoConta(@item.Id.ToString())">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+
+        }
+    }
+</table>
+
+<script>
+    function criarPlanoConta() {
+        window.location.href = "../PlanoConta/CriarPlanoConta";
+
+    }
+
+    function ExcluirPlanoConta(id_conta) {
+        window.location.href = "../PlanoConta/ExcluirPlanoConta/" + id_conta;
+
+    }
+
+    function editarPlanoConta(id_conta) {
+        window.location.href = "../PlanoConta/CriarPlanoConta/" + id_conta;
+
+    }
+
+</script>
+

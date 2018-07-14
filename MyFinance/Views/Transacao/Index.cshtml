@@ -1,0 +1,134 @@
+﻿<!--
+    View Listar Transação
+-->
+
+@model TransacaoModel
+
+<h2>Transações</h2>
+
+<br />
+<!-- -->
+<div class="row">
+    <div class="col-lg-6">
+        <button class="btn btn-success" onclick="registrarTransacao()"> <strong>+</strong> Adicionar Conta</button>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+            </span>
+        </div>
+    </div>
+</div>
+<!-- -->
+<br /><br />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+
+            <th style="width:20px"> <strong>#ID</strong></th>
+            <th>Data</th>
+            <th>Tipo</th>
+            <th>Valor</th>
+            <th>Historico</th>
+            <th>Conta</th>
+            <th>Plano de Contas</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+
+    @{
+        foreach (var item in (List<TransacaoModel>)ViewBag.ListaTransacao)
+        {
+            <tbody>
+                <tr>
+                    <td> @item.Id.ToString()</td>
+                    <td>@item.Data.ToString()</td>
+                    <td>@item.Tipo.ToString().Replace("R", "Receita").Replace("D", "Despesa")</td>
+                    <td>@item.Valor.ToString()</td>
+                    <td>@item.Descricao.ToString()</td>
+                    <td>@item.NomeConta.ToString()</td>
+
+                    <td>@item.DescricaoPlanoConta.ToString()</td>
+
+                    <td>
+                        <button type="button" class="btn btn-warning" id="btDetalhes" onclick="DetalhesTransacao(@item.Id.ToString())">Ver</button>
+                        <button class="btn btn-primary" onclick="editarTransacao(@item.Id.ToString())">Editar</button>
+                        <button class="btn btn-danger" id="btDelete" onclick="ExcluirTransacao(@item.Id.ToString())">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+
+        }
+    }
+</table>
+
+
+
+
+<!-- Modal Excluir-->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Atenção</h4>
+            </div>
+            <div class="modal-body">
+                <p id="msn"></p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" id="btDeletar" data-dismiss="modal">Deletar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function registrarTransacao() {
+        window.location.href = "../Transacao/Registrar";
+
+    }
+
+    function ExcluirTransacao(id) {
+        $(document).ready(function () {
+            $("#myModal").modal({ backdrop: "static" });
+            document.getElementById("msn").innerHTML = "Deseja mesmo deletar este registro " + '<strong>' + id + '</strong>' + " ?";
+
+
+            $("#btDeletar").click(function () {
+                window.location.href = "../Transacao/ExcluirTransacao/" + id;
+            });
+        });
+        $("#myModal").hide();
+    }
+
+    function editarTransacao(id) {
+        window.location.href = "../Transacao/Registrar/" + id;
+
+    }
+
+    function DetalhesTransacao(id) {
+       
+        $(document).ready(function () {
+            
+         
+            
+            window.location.href = "../Transacao/DetalhesTransacao/" + id;
+        });
+       
+        $("#modalDetalhes").modal({ backdrop: "static" });
+       
+
+    }
+
+</script>
+
